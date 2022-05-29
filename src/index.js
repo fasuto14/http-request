@@ -5,7 +5,9 @@ import * as crud from './js/crud';
 //     name: 'Fausto',
 //     job: 'Developer'
 // }).then(console.log)
-crud.actualizeUser(1, {
-    name: 'Owen',
-    job: 'Molestar all day'
-}).then(console.log)
+// crud.actualizeUser(1, {
+//     name: 'Owen',
+//     job: 'Molestar all day'
+// }).then(console.log);
+
+crud.deleteUser(3).then(console.log)
