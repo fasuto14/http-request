@@ -19,11 +19,6 @@ fetch(jokeUrl)
         console.log(id, value)
     });
 
-
-
-
-
-
 export {
     obtenerChiste
 }
