@@ -1,3 +1,7 @@
-import { init } from './js/usuarios-page';
+import * as crud from './js/crud';
 
-init();
+crud.getUser(11).then(console.log);
+crud.createUser({
+    name: 'Fausto',
+    job: 'Developer'
+}).then(console.log)

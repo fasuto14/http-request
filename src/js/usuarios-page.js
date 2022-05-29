@@ -4,11 +4,9 @@ const body = document.body;
 let tbody;
 let correlativo = 0;
 const crearHtml = () => {
-
     const html = `
     <hr>
     <h1 class="mt-5"> Usuarios</h1>
-
     <table class="table">
         <thead>
             <tr>
@@ -22,18 +20,15 @@ const crearHtml = () => {
         </tbody>
     </table>
     `;
-
     const div = document.createElement('div');
     div.innerHTML = html;
     body.appendChild(div);
-
     // Crear una referencia al TBODY
     // ya que los TRs van dentro del tbody
     // querySelector('tbody');
     // Crear una variable para mantener la referencia?
     tbody = document.querySelector('tbody');
 }
-
 
 // La función crearFilaUsuario debería de recibir un UNICO usuario
 // con la siguiente estructura
@@ -45,7 +40,6 @@ const crearHtml = () => {
 //     "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
 // }
 const crearFilaUsuario = (usuario) => {
-
     // En la tabla deben de colocar un correlativo empezando en 1
     // También deben de colocar el avatar
     correlativo++;
@@ -57,23 +51,18 @@ const crearFilaUsuario = (usuario) => {
             <img class="img-thumbnail" src="${usuario.avatar}">
         </td>
     `;
-
     const tr = document.createElement('tr');
     tr.innerHTML = html;
     tbody.appendChild(tr);
     // Añadir el table row (tr) dentro del TBody creado anteriormente
-
 }
 
 
 export const init = async () => {
-
     crearHtml();
     (await obtenerUsuarios()).forEach(crearFilaUsuario);
     // Obtener la lista de usuarios usando el servicio creado
     // Por cada usuario, llamar la función crearFila (for, forEach)
     // Colocar el init en el index.js, para que se ejecute la creación
-
-
 }
 
